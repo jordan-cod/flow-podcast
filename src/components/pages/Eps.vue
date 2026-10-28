@@ -1,25 +1,24 @@
 <template>
 <div id="episodios-container">
     <div id="episodios">
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
-        <epscard/>
+        <epscard v-for="episode in episodes" :key="episode.videoId" :episode="episode"/>
     </div>
-    <button id="load">Carregar mais Episódios</button>
+    <a id="load" href="https://www.youtube.com/@FlowPodcast/streams" target="_blank" rel="noopener">Mais episódios no YouTube</a>
 </div>
 </template>
 
 <script>
 import epscard from '../epscard'
+import episodios from '../../data/episodios.json'
+
 export default {
   components: {
     epscard
+  },
+  data () {
+    return {
+      episodes: episodios
+    }
   }
 }
 </script>
@@ -33,6 +32,7 @@ export default {
         margin: 0 3%;
     }
     #episodios-container{
+        padding-top: 30px;
         display: flex;
         flex-direction: column;
         align-items: center;

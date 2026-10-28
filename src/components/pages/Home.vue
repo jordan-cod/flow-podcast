@@ -38,18 +38,7 @@
             <h3>Quem já passou por aqui</h3>
             <p>Ouça nossos episódios</p>
             <div id="eps-cards">
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
-                <epscard/>
+                <epscard v-for="episode in episodes" :key="episode.videoId" :episode="episode"/>
             </div>
         </section>
         <div id="vercontainer">
@@ -60,10 +49,17 @@
 
 <script>
 import epscard from '../epscard'
+import episodios from '../../data/episodios.json'
+
 export default {
   name: 'home',
   components: {
     epscard
+  },
+  data () {
+    return {
+      episodes: episodios.slice(0, 9)
+    }
   }
 }
 </script>
