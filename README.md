@@ -2,7 +2,7 @@
 
 Clone de estudo do frontend do site do [Flow Podcast](https://flowpodcast.com.br/), feito em 2021 com Vue 2 enquanto eu cursava Sistemas para Internet.
 
-> Projeto pessoal e educacional, sem nenhuma afiliação com o Flow Podcast. Marcas e imagens pertencem aos seus respectivos donos. Não há backend: episódios, concursos e produtos da loja são dados estáticos.
+> Projeto pessoal e educacional, sem nenhuma afiliação com o Flow Podcast. Marcas e imagens pertencem aos seus respectivos donos. Não há backend: concursos e produtos da loja são dados estáticos.
 
 **Site no ar:** https://jordan-cod.github.io/flow-podcast-frontend-vue/
 
@@ -16,6 +16,14 @@ Clone de estudo do frontend do site do [Flow Podcast](https://flowpodcast.com.br
 - Concursos
 - Membros
 - Flowcoins
+
+## Episódios
+
+Os cards de episódios da Home (9 mais recentes) e da página Episódios (12) vêm do RSS público do canal do Flow Podcast no YouTube (lives e vídeos, sem Shorts). O script `scripts/fetch-episodes.mjs` baixa o feed e grava `src/data/episodios.json`; ele roda antes de todo build (`prebuild`) e o workflow de deploy roda uma vez por dia, então o site se atualiza sozinho. Se o feed falhar, o JSON versionado no repositório é mantido e o build segue normalmente.
+
+```bash
+npm run fetch:episodes
+```
 
 ## Stack
 
@@ -51,4 +59,4 @@ E abrir http://localhost:3000/flow-podcast-frontend-vue/.
 
 ## Deploy
 
-Todo push na `main` dispara o workflow `.github/workflows/pages.yml`, que faz lint, build e publica o `dist/` no GitHub Pages.
+Todo push na `main`, a execução diária agendada (09:00 UTC) e o disparo manual rodam o workflow `.github/workflows/pages.yml`, que faz lint, atualiza os episódios, faz o build e publica o `dist/` no GitHub Pages.
