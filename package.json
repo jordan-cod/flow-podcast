@@ -8,6 +8,8 @@
   },
   "scripts": {
     "serve": "vue-cli-service serve",
+    "fetch:episodes": "node scripts/fetch-episodes.mjs",
+    "prebuild": "npm run fetch:episodes",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
