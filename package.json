@@ -2,7 +2,7 @@
   "name": "flow-podcast",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://jordan-cod.github.io/flow-podcast-frontend-vue/",
+  "homepage": "https://jordan-cod.github.io/flow-podcast/",
   "engines": {
     "node": ">=18"
   },

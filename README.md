@@ -4,7 +4,7 @@ Clone de estudo do frontend do site do [Flow Podcast](https://flowpodcast.com.br
 
 > Projeto pessoal e educacional, sem nenhuma afiliação com o Flow Podcast. Marcas e imagens pertencem aos seus respectivos donos. Não há backend: concursos e produtos da loja são dados estáticos.
 
-**Site no ar:** https://jordan-cod.github.io/flow-podcast-frontend-vue/
+**Site no ar:** https://jordan-cod.github.io/flow-podcast/
 
 ![Página inicial do clone](docs/preview.jpg)
 
@@ -42,7 +42,7 @@ npm ci
 npm run serve
 ```
 
-Build de produção, gerado em `dist/` e servido em `/flow-podcast-frontend-vue/`:
+Build de produção, gerado em `dist/` e servido em `/flow-podcast/`:
 
 ```bash
 npm run build
@@ -51,11 +51,11 @@ npm run build
 Para conferir o build localmente no mesmo subcaminho do GitHub Pages:
 
 ```bash
-mkdir -p /tmp/pages && cp -R dist /tmp/pages/flow-podcast-frontend-vue
+mkdir -p /tmp/pages && cp -R dist /tmp/pages/flow-podcast
 npx serve /tmp/pages
 ```
 
-E abrir http://localhost:3000/flow-podcast-frontend-vue/.
+E abrir http://localhost:3000/flow-podcast/.
 
 ## Deploy
 
