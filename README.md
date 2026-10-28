@@ -1,34 +1,54 @@
-<p align=center><img align=center src="https://cdn.flowpodcast.com.br/assets/images/logos/logo-header.png"></p>
-<h1 align=center>Flow Podcast Clone 🎙️</h1>
-<p align=center>Projeto de clone do site do <a href="https://flowpodcast.com.br/">Flow Podcast</a>.
-  
-<p align=center>
-  <img src="https://img.shields.io/github/followers/jordan-cod?color=green&label=Seguidores&style=flat-square">
-  <img src="https://img.shields.io/github/forks/jordan-cod/flow-podcast-clonee?color=green&label=Forks&style=flat-square">
-  <img src="https://img.shields.io/website?down_message=Offline&style=flat-square&up_message=Online&url=https%3A%2F%2Fjordan-cod.github.io%2Fflow-podcast-clonee%2F">
-<p>
+# Flow Podcast Clone
 
+Clone de estudo do frontend do site do [Flow Podcast](https://flowpodcast.com.br/), feito em 2021 com Vue 2 enquanto eu cursava Sistemas para Internet.
 
-### Objetivos do projeto
-<p>O objetivo é clonar o site utilizando as linguagens que conheço atualmente, e, se necessário, novas linguagens.</p>
-<p>Atualmente sou estudante de Sistemas para Internet, e como objetivo de estudo, resolvi clonar alguns sites. O primeiro está sendo o <a href="https://flowpodcast.com.br/">Flow</a>.</p>
+> Projeto pessoal e educacional, sem nenhuma afiliação com o Flow Podcast. Marcas e imagens pertencem aos seus respectivos donos. Não há backend: episódios, concursos e produtos da loja são dados estáticos.
 
+**Site no ar:** https://jordan-cod.github.io/flow-podcast-frontend-vue/
 
-### Andamento do projeto
-#### Páginas 
-- [x] Home
-- [x] Loja
-- [x] Episódios
-- [x] Concursos
-- [x] Membros
-- [x] Flowcoins
+![Página inicial do clone](docs/preview.jpg)
 
-#### Back End
-- [ ] Cadastro de usuários
-- [ ] Cadasto de produtos da loja
-- [ ] Cadastro de episódios, concursos e etc.
+## Páginas
 
-<p align=center>Visite o site clicando <a href="https://flow-podcastvue.vercel.app/#/">aqui</a>
+- Home
+- Loja
+- Episódios
+- Concursos
+- Membros
+- Flowcoins
 
+## Stack
 
+- Vue 2.7
+- Vue Router 3 (modo hash)
+- Vue CLI 5 (webpack 5)
+- ESLint (standard)
+- GitHub Pages via GitHub Actions
 
+## Como rodar
+
+Requer Node 18 ou superior (a versão usada no deploy está em `.nvmrc`).
+
+```bash
+npm ci
+npm run serve
+```
+
+Build de produção, gerado em `dist/` e servido em `/flow-podcast-frontend-vue/`:
+
+```bash
+npm run build
+```
+
+Para conferir o build localmente no mesmo subcaminho do GitHub Pages:
+
+```bash
+mkdir -p /tmp/pages && cp -R dist /tmp/pages/flow-podcast-frontend-vue
+npx serve /tmp/pages
+```
+
+E abrir http://localhost:3000/flow-podcast-frontend-vue/.
+
+## Deploy
+
+Todo push na `main` dispara o workflow `.github/workflows/pages.yml`, que faz lint, build e publica o `dist/` no GitHub Pages.
